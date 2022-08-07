@@ -31,7 +31,7 @@ $RECYCLE.BIN/
 *~
 
 # KDE directory preferences
-.directory
+# .directory
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
@@ -41,9 +41,9 @@ $RECYCLE.BIN/
 #-------------------------
 # These should never be under version control,
 # as it poses a security risk.
-.env
-.vagrant
-Vagrantfile
+# .env
+# .vagrant
+# Vagrantfile
 
 #-------------------------
 # Temporary Files
@@ -75,7 +75,7 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 #-------------------------
 # Test Files
 #-------------------------
-tests/coverage*
+# tests/coverage*
 
 # Don't save phpunit under version control.
 phpunit
@@ -90,7 +90,7 @@ vendor/
 #-------------------------
 
 # Modules Testing
-_modules/*
+# _modules/*
 
 # phpenv local config
 .php-version

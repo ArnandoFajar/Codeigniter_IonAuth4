@@ -26,6 +26,12 @@ $paths = new Config\Paths();
 require rtrim($paths->systemDirectory, '\\/ ') . DIRECTORY_SEPARATOR . 'bootstrap.php';
 
 // Load environment settings from .env files into $_SERVER and $_ENV
+if ($_SERVER['HTTP_HOST'] == 'localhost:8080') {
+    define('ENVIRONMENT', 'development');
+} else {
+    define('ENVIRONMENT', 'production');
+}
+
 require_once SYSTEMPATH . 'Config/DotEnv.php';
 (new CodeIgniter\Config\DotEnv(ROOTPATH))->load();
 
