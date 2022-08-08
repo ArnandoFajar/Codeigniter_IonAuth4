@@ -2242,6 +2242,7 @@ class IonAuthModel
 		return implode("", $messageLang);
 	}
 
+
 	/**
 	 * Get the messages as an array
 	 *

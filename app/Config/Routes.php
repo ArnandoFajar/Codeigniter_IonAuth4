@@ -35,6 +35,9 @@ $routes->set404Override();
 
 $routes->add('auth/login', 'Auth::login', ["filter" => "checkuser"]); // filter
 $routes->get('logout', 'Auth::logout');
+$routes->add('register', 'Auth::register');
+$routes->add('auth/activate/(:num)/(:hash)', 'Auth::activate_register/$1/$2');
+
 $routes->add('forgot_password', 'Auth::forgot_password');
 $routes->add('auth/forgot_password', 'Auth::forgot_password'); // route add gabungan Post dan Get
 $routes->get('auth/reset_password/(:any)', 'Auth::reset_password/$1');
@@ -44,10 +47,11 @@ $routes->group('auth', ["filter" => "checkauth"], function ($routes) {
     $routes->get('/', 'Auth::index');
     $routes->add('create_user', 'Auth::create_user');
     $routes->add('edit_user/(:num)', 'Auth::edit_user/$1');
+    $routes->add('delete_user/(:num)', 'Auth::delete_user/$1');
     $routes->add('edit_group/(:num)', 'Auth::edit_group/$1');
     $routes->add('create_group', 'Auth::create_group', ["filter" => "admin"]);
     $routes->get('activate/(:num)', 'Auth::activate/$1');
-    $routes->get('activate/(:num)/(:hash)', 'Auth::activate/$1/$2');
+    // $routes->get('activate/(:num)/(:hash)', 'Auth::activate/$1/$2');
     $routes->add('deactivate/(:num)', 'Auth::deactivate/$1');
     $routes->get('reset_password/(:hash)', 'Auth::reset_password/$1');
     $routes->post('reset_password/(:hash)', 'Auth::reset_password/$1');

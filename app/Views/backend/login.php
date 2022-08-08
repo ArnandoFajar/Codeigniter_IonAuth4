@@ -60,6 +60,7 @@
             </form>
             <div>
               <a href="<?= base_url('forgot_password'); ?>" class="text-decoration-none d-flex justify-content-end">Lupa Password ?</a>
+              <a href="<?= base_url('register'); ?>" class="text-decoration-none d-flex justify-content-start">Register</a>
             </div>
           </div>
         </div>
