@@ -58,6 +58,9 @@
                 <button type="submit" class="btn text-light main-bg">Login</button>
               </div>
             </form>
+            <div>
+              <a href="<?= base_url('forgot_password'); ?>" class="text-decoration-none d-flex justify-content-end">Lupa Password ?</a>
+            </div>
           </div>
         </div>
       </div>

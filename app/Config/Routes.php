@@ -33,13 +33,12 @@ $routes->set404Override();
  * --------------------------------------------------------------------
  */
 
-// We get a performance increase by specifying the default
-// route since we don't have to scan directories.
-// $routes->get('/', 'Home::index');
-// // $routes->group('auth', ['namespace' => 'IonAuth\Controllers'], function ($routes) {
-$routes->add('auth/login', 'Auth::login', ["filter" => "checkuser"]);
+$routes->add('auth/login', 'Auth::login', ["filter" => "checkuser"]); // filter
 $routes->get('logout', 'Auth::logout');
 $routes->add('forgot_password', 'Auth::forgot_password');
+$routes->add('auth/forgot_password', 'Auth::forgot_password'); // route add gabungan Post dan Get
+$routes->get('auth/reset_password/(:any)', 'Auth::reset_password/$1');
+$routes->post('auth/reset_password/(:any)', 'Auth::reset_password/$1');
 
 $routes->group('auth', ["filter" => "checkauth"], function ($routes) {
     $routes->get('/', 'Auth::index');
@@ -53,30 +52,11 @@ $routes->group('auth', ["filter" => "checkauth"], function ($routes) {
     $routes->get('reset_password/(:hash)', 'Auth::reset_password/$1');
     $routes->post('reset_password/(:hash)', 'Auth::reset_password/$1');
     $routes->get('check', 'auth::checkgroup');
-    // ...
 });
 
 $routes->get('admin', "Home::index", ["filter" => "admin"]);
 $routes->get('member', "Home::member");
 
-// // $routes->get('auth', 'Auth::index');
-// $routes->get('auth', 'Auth::index', ["filter" => "auth"]);
-// $routes->get('auth', 'Auth::index', ["filter" => "auth"]);
-
-// $routes->get('logout', 'Home::logout');
-/*
- * --------------------------------------------------------------------
- * Additional Routing
- * --------------------------------------------------------------------
- *
- * There will often be times that you need additional routing and you
- * need it to be able to override any defaults in this file. Environment
- * based routes is one such time. require() additional route files here
- * to make that happen.
- *
- * You will have access to the $routes object within that file without
- * needing to reload it.
- */
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
