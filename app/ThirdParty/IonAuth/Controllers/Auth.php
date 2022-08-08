@@ -137,11 +137,7 @@ class Auth extends \CodeIgniter\Controller
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->setFlashdata('message', $this->ionAuth->messages());
-<<<<<<< HEAD
-				return redirect()->to(base_url('auth/'))->withCookies();
-=======
 				return redirect()->to('/')->withCookies();
->>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 			} else {
 				// if the login was un-successful
 				// redirect them back to the login page
