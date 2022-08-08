@@ -1,4 +1,4 @@
-<html>
+ <html>
 <body>
 	<h1><?=sprintf(lang('IonAuth.emailForgotPassword_heading'), $identity)?></h1>
 	<p>
