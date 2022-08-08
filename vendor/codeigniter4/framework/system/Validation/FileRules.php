@@ -14,6 +14,10 @@ namespace CodeIgniter\Validation;
 use CodeIgniter\HTTP\RequestInterface;
 use Config\Mimes;
 use Config\Services;
+<<<<<<< HEAD
+=======
+use InvalidArgumentException;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
 /**
  * File validation rules
@@ -79,8 +83,16 @@ class FileRules
     {
         // Grab the file name off the top of the $params
         // after we split it.
+<<<<<<< HEAD
         $params = explode(',', $params);
         $name   = array_shift($params);
+=======
+        $paramArray = explode(',', $params);
+        if (count($paramArray) !== 2) {
+            throw new InvalidArgumentException('Invalid max_size parameter: "' . $params . '"');
+        }
+        $name = array_shift($paramArray);
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
         if (! ($files = $this->request->getFileMultiple($name))) {
             $files = [$this->request->getFile($name)];
@@ -99,7 +111,11 @@ class FileRules
                 return false;
             }
 
+<<<<<<< HEAD
             if ($file->getSize() / 1024 > $params[0]) {
+=======
+            if ($file->getSize() / 1024 > $paramArray[0]) {
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
                 return false;
             }
         }
@@ -133,7 +149,11 @@ class FileRules
 
             // We know that our mimes list always has the first mime
             // start with `image` even when then are multiple accepted types.
+<<<<<<< HEAD
             $type = Mimes::guessTypeFromExtension($file->getExtension());
+=======
+            $type = Mimes::guessTypeFromExtension($file->getExtension()) ?? '';
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
             if (mb_strpos($type, 'image') !== 0) {
                 return false;

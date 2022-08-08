@@ -776,7 +776,11 @@ class ContentSecurityPolicy
     protected function addToHeader(string $name, $values = null)
     {
         if (is_string($values)) {
+<<<<<<< HEAD
             $values = [$values => 0];
+=======
+            $values = [$values => $this->reportOnly];
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         }
 
         $sources       = [];
@@ -785,13 +789,24 @@ class ContentSecurityPolicy
         foreach ($values as $value => $reportOnly) {
             if (is_numeric($value) && is_string($reportOnly) && ! empty($reportOnly)) {
                 $value      = $reportOnly;
+<<<<<<< HEAD
                 $reportOnly = 0;
+=======
+                $reportOnly = $this->reportOnly;
+            }
+
+            if (strpos($value, 'nonce-') === 0) {
+                $value = "'{$value}'";
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             }
 
             if ($reportOnly === true) {
                 $reportSources[] = in_array($value, $this->validSources, true) ? "'{$value}'" : $value;
+<<<<<<< HEAD
             } elseif (strpos($value, 'nonce-') === 0) {
                 $sources[] = "'{$value}'";
+=======
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             } else {
                 $sources[] = in_array($value, $this->validSources, true) ? "'{$value}'" : $value;
             }

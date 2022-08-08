@@ -87,6 +87,11 @@ class Forge extends BaseForge
      * CREATE TABLE IF statement
      *
      * @var string
+<<<<<<< HEAD
+=======
+     *
+     * @deprecated This is no longer used.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     protected $createTableIfStr;
 
@@ -101,6 +106,7 @@ class Forge extends BaseForge
     {
         parent::__construct($db);
 
+<<<<<<< HEAD
         $this->createTableIfStr = 'IF NOT EXISTS'
             . '(SELECT t.name, s.name as schema_name, t.type_desc '
             . 'FROM sys.tables t '
@@ -109,6 +115,8 @@ class Forge extends BaseForge
             . "AND t.name=REPLACE(N'%s', '\"', '') "
             . "AND t.type_desc='USER_TABLE')\nCREATE TABLE ";
 
+=======
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         $this->createTableStr = '%s ' . $this->db->escapeIdentifiers($this->db->schema) . ".%s (%s\n) ";
         $this->renameTableStr = 'EXEC sp_rename [' . $this->db->escapeIdentifiers($this->db->schema) . '.%s] , %s ;';
 

@@ -573,6 +573,15 @@ if (! function_exists('random_string')) {
                 return sha1(uniqid((string) mt_rand(), true));
 
             case 'crypto':
+<<<<<<< HEAD
+=======
+                if ($len % 2 !== 0) {
+                    throw new InvalidArgumentException(
+                        'You must set an even number to the second parameter when you use `crypto`.'
+                    );
+                }
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
                 return bin2hex(random_bytes($len / 2));
         }
         // 'basic' type treated as default

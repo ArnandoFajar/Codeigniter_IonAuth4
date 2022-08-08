@@ -247,6 +247,11 @@ class DownloadResponse extends Response
     /**
      * {@inheritDoc}
      *
+<<<<<<< HEAD
+=======
+     * @return $this
+     *
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      * @todo Do downloads need CSP or Cookies? Compare with ResponseTrait::send()
      */
     public function send()

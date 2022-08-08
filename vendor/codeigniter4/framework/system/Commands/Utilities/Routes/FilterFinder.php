@@ -11,6 +11,10 @@
 
 namespace CodeIgniter\Commands\Utilities\Routes;
 
+<<<<<<< HEAD
+=======
+use CodeIgniter\Exceptions\PageNotFoundException;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 use CodeIgniter\Filters\Filters;
 use CodeIgniter\Router\Exceptions\RedirectException;
 use CodeIgniter\Router\Router;
@@ -67,6 +71,14 @@ final class FilterFinder
                 'before' => [],
                 'after'  => [],
             ];
+<<<<<<< HEAD
+=======
+        } catch (PageNotFoundException $e) {
+            return [
+                'before' => ['<unknown>'],
+                'after'  => ['<unknown>'],
+            ];
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         }
     }
 }

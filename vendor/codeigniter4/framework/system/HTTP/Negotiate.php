@@ -18,7 +18,11 @@ use CodeIgniter\HTTP\Exceptions\HTTPException;
  *
  * Provides methods to negotiate with the HTTP headers to determine the best
  * type match between what the application supports and what the requesting
+<<<<<<< HEAD
  * getServer wants.
+=======
+ * server wants.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
  *
  * @see http://tools.ietf.org/html/rfc7231#section-5.3
  */

@@ -11,6 +11,11 @@
 
 namespace CodeIgniter\RESTful;
 
+<<<<<<< HEAD
+=======
+use CodeIgniter\HTTP\Response;
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 /**
  * An extendable controller to help provide a UI for a resource.
  */
@@ -19,7 +24,11 @@ class ResourcePresenter extends BaseResource
     /**
      * Present a view of resource objects
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function index()
     {
@@ -29,9 +38,15 @@ class ResourcePresenter extends BaseResource
     /**
      * Present a view to present a specific resource object
      *
+<<<<<<< HEAD
      * @param mixed $id
      *
      * @return mixed
+=======
+     * @param int|string|null $id
+     *
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function show($id = null)
     {
@@ -41,7 +56,11 @@ class ResourcePresenter extends BaseResource
     /**
      * Present a view to present a new single resource object
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function new()
     {
@@ -52,7 +71,11 @@ class ResourcePresenter extends BaseResource
      * Process the creation/insertion of a new resource object.
      * This should be a POST.
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function create()
     {
@@ -62,9 +85,15 @@ class ResourcePresenter extends BaseResource
     /**
      * Present a view to edit the properties of a specific resource object
      *
+<<<<<<< HEAD
      * @param mixed $id
      *
      * @return mixed
+=======
+     * @param int|string|null $id
+     *
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function edit($id = null)
     {
@@ -75,9 +104,15 @@ class ResourcePresenter extends BaseResource
      * Process the updating, full or partial, of a specific resource object.
      * This should be a POST.
      *
+<<<<<<< HEAD
      * @param mixed $id
      *
      * @return mixed
+=======
+     * @param int|string|null $id
+     *
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function update($id = null)
     {
@@ -87,9 +122,15 @@ class ResourcePresenter extends BaseResource
     /**
      * Present a view to confirm the deletion of a specific resource object
      *
+<<<<<<< HEAD
      * @param mixed $id
      *
      * @return mixed
+=======
+     * @param int|string|null $id
+     *
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function remove($id = null)
     {
@@ -99,9 +140,15 @@ class ResourcePresenter extends BaseResource
     /**
      * Process the deletion of a specific resource object
      *
+<<<<<<< HEAD
      * @param mixed $id
      *
      * @return mixed
+=======
+     * @param int|string|null $id
+     *
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function delete($id = null)
     {

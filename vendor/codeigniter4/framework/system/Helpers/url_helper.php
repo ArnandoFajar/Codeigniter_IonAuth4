@@ -525,7 +525,12 @@ if (! function_exists('url_to')) {
      * NOTE: This requires the controller/method to
      * have a route defined in the routes Config file.
      *
+<<<<<<< HEAD
      * @param mixed ...$args
+=======
+     * @param string     $controller Named route or Controller::method
+     * @param int|string ...$args    One or more parameters to be passed to the route
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      *
      * @throws RouterException
      */

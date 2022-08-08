@@ -45,7 +45,11 @@ trait MessageTrait
     /**
      * Sets the body of the current message.
      *
+<<<<<<< HEAD
      * @param mixed $data
+=======
+     * @param string $data
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      *
      * @return $this
      */
@@ -75,7 +79,11 @@ trait MessageTrait
     //--------------------------------------------------------------------
 
     /**
+<<<<<<< HEAD
      * Populates the $headers array with any headers the getServer knows about.
+=======
+     * Populates the $headers array with any headers the server knows about.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function populateHeaders(): void
     {

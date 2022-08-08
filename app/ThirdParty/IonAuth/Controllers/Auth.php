@@ -7,7 +7,11 @@ namespace IonAuth\Controllers;
  *
  * @property Ion_auth|Ion_auth_model $ion_auth      The ION Auth spark
  * @package  CodeIgniter-Ion-Auth
+<<<<<<< HEAD
  * @author   Ben Edmunds <ben.edmunds@gmail.com>
+=======
+ * @author   Ben Edmuhhnds <ben.edmunds@gmail.com>
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
  * @author   Benoit VRIGNAUD <benoit.vrignaud@zaclys.net>
  * @license  https://opensource.org/licenses/MIT	MIT License
  */
@@ -133,7 +137,11 @@ class Auth extends \CodeIgniter\Controller
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->setFlashdata('message', $this->ionAuth->messages());
+<<<<<<< HEAD
 				return redirect()->to(base_url('auth/'))->withCookies();
+=======
+				return redirect()->to('/')->withCookies();
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 			} else {
 				// if the login was un-successful
 				// redirect them back to the login page

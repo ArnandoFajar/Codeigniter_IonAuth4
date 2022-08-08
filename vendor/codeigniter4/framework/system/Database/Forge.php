@@ -110,6 +110,11 @@ class Forge
      * CREATE TABLE IF statement
      *
      * @var bool|string
+<<<<<<< HEAD
+=======
+     *
+     * @deprecated This is no longer used.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     protected $createTableIfStr = 'CREATE TABLE IF NOT EXISTS';
 
@@ -495,6 +500,7 @@ class Forge
             throw new RuntimeException('Field information is required.');
         }
 
+<<<<<<< HEAD
         $sql = $this->_createTable($table, $ifNotExists, $attributes);
 
         if (is_bool($sql)) {
@@ -506,10 +512,20 @@ class Forge
 
                 return false;
             }
+=======
+        // If table exists lets stop here
+        if ($ifNotExists === true && $this->db->tableExists($table)) {
+            $this->reset();
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
             return true;
         }
 
+<<<<<<< HEAD
+=======
+        $sql = $this->_createTable($table, false, $attributes);
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         if (($result = $this->db->query($sql)) !== false) {
             if (isset($this->db->dataCache['table_names']) && ! in_array($table, $this->db->dataCache['table_names'], true)) {
                 $this->db->dataCache['table_names'][] = $table;
@@ -529,6 +545,7 @@ class Forge
     }
 
     /**
+<<<<<<< HEAD
      * @return bool|string
      */
     protected function _createTable(string $table, bool $ifNotExists, array $attributes)
@@ -545,6 +562,14 @@ class Forge
         $sql = ($ifNotExists) ? sprintf($this->createTableIfStr, $this->db->escapeIdentifiers($table))
             : 'CREATE TABLE';
 
+=======
+     * @return string
+     *
+     * @deprecated $ifNotExists is no longer used, and will be removed.
+     */
+    protected function _createTable(string $table, bool $ifNotExists, array $attributes)
+    {
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         $columns = $this->_processFields(true);
 
         for ($i = 0, $c = count($columns); $i < $c; $i++) {
@@ -566,7 +591,11 @@ class Forge
 
         return sprintf(
             $this->createTableStr . '%s',
+<<<<<<< HEAD
             $sql,
+=======
+            'CREATE TABLE',
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             $this->db->escapeIdentifiers($table),
             $columns,
             $this->_createTableAttributes($attributes)
@@ -778,7 +807,11 @@ class Forge
             return false;
         }
 
+<<<<<<< HEAD
         if ($sqls !== null) {
+=======
+        if (is_array($sqls)) {
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             foreach ($sqls as $sql) {
                 if ($this->db->query($sql) === false) {
                     return false;

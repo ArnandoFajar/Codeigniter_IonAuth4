@@ -126,7 +126,11 @@ trait ControllerTestTrait
     /**
      * Loads the specified controller, and generates any needed dependencies.
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return $this
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function controller(string $name)
     {
@@ -215,7 +219,11 @@ trait ControllerTestTrait
      *
      * @param mixed $appConfig
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return $this
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function withConfig($appConfig)
     {
@@ -229,7 +237,11 @@ trait ControllerTestTrait
      *
      * @param mixed $request
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return $this
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function withRequest($request)
     {
@@ -246,7 +258,11 @@ trait ControllerTestTrait
      *
      * @param mixed $response
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return $this
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function withResponse($response)
     {
@@ -260,7 +276,11 @@ trait ControllerTestTrait
      *
      * @param mixed $logger
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return $this
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function withLogger($logger)
     {
@@ -272,7 +292,11 @@ trait ControllerTestTrait
     /**
      * Set the controller's URI, with method chaining.
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return $this
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function withUri(string $uri)
     {
@@ -286,7 +310,11 @@ trait ControllerTestTrait
      *
      * @param string|null $body
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return $this
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function withBody($body)
     {

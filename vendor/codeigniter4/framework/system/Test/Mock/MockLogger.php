@@ -65,7 +65,11 @@ class MockLogger
       | The logging system supports multiple actions to be taken when something
       | is logged. This is done by allowing for multiple Handlers, special classes
       | designed to write the log to their chosen destinations, whether that is
+<<<<<<< HEAD
       | a file on the getServer, a cloud-based service, or even taking actions such
+=======
+      | a file on the server, a cloud-based service, or even taking actions such
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
       | as emailing the dev team.
       |
       | Each handler is defined by the class name used for that handler, and it

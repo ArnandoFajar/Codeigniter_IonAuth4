@@ -178,7 +178,13 @@ class FileCollection implements Countable, IteratorAggregate
                 // Test for a directory
                 self::resolveDirectory($path);
             } catch (FileException $e) {
+<<<<<<< HEAD
                 return $this->addFile($path);
+=======
+                $this->addFile($path);
+
+                continue;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             }
 
             $this->addDirectory($path, $recursive);

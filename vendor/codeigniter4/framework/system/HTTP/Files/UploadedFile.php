@@ -283,7 +283,11 @@ class UploadedFile extends File implements UploadedFileInterface
      * type but will return the clientExtension if it fails to do so.
      *
      * This method will always return a more or less helpfull extension
+<<<<<<< HEAD
      * but might be insecure if the mime type is not machted. Consider
+=======
+     * but might be insecure if the mime type is not matched. Consider
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      * using guessExtension for a more safe version.
      */
     public function getExtension(): string

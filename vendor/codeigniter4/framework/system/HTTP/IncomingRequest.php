@@ -22,7 +22,11 @@ use Locale;
 /**
  * Class IncomingRequest
  *
+<<<<<<< HEAD
  * Represents an incoming, getServer-side HTTP request.
+=======
+ * Represents an incoming, server-side HTTP request.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
  *
  * Per the HTTP specification, this interface includes properties for
  * each of the following:
@@ -347,7 +351,11 @@ class IncomingRequest extends Request
      */
     public function isCLI(): bool
     {
+<<<<<<< HEAD
         return is_cli();
+=======
+        return false;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     }
 
     /**

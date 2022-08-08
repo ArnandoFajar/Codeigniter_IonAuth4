@@ -102,7 +102,11 @@ class FileHandler extends BaseHandler
 
                 // @codeCoverageIgnoreStart
             } catch (Throwable $e) {
+<<<<<<< HEAD
                 log_message('debug', 'Failed to set mode on cache file: ' . $e->getMessage());
+=======
+                log_message('debug', 'Failed to set mode on cache file: ' . $e);
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
                 // @codeCoverageIgnoreEnd
             }
 

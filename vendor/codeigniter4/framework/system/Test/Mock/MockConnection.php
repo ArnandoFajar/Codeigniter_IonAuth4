@@ -19,6 +19,17 @@ use CodeIgniter\Database\Query;
 class MockConnection extends BaseConnection
 {
     protected $returnValues = [];
+<<<<<<< HEAD
+=======
+
+    /**
+     * Database schema for Postgre and SQLSRV
+     *
+     * @var string
+     */
+    protected $schema;
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     public $database;
     public $lastQuery;
 

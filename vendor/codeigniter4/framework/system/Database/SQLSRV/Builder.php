@@ -255,7 +255,17 @@ class Builder extends BaseBuilder
 
         $sql = $this->_update($this->QBFrom[0], $values);
 
+<<<<<<< HEAD
         return $this->db->query($sql, $this->binds, false);
+=======
+        if (! $this->testMode) {
+            $this->resetWrite();
+
+            return $this->db->query($sql, $this->binds, false);
+        }
+
+        return true;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     }
 
     /**
@@ -275,7 +285,17 @@ class Builder extends BaseBuilder
 
         $sql = $this->_update($this->QBFrom[0], $values);
 
+<<<<<<< HEAD
         return $this->db->query($sql, $this->binds, false);
+=======
+        if (! $this->testMode) {
+            $this->resetWrite();
+
+            return $this->db->query($sql, $this->binds, false);
+        }
+
+        return true;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     }
 
     /**

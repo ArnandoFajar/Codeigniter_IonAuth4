@@ -45,6 +45,10 @@
 # database.default.password = root
 # database.default.DBDriver = MySQLi
 # database.default.DBPrefix =
+<<<<<<< HEAD
+=======
+# database.default.port = 3306
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
 # database.tests.hostname = localhost
 # database.tests.database = ci4
@@ -52,6 +56,10 @@
 # database.tests.password = root
 # database.tests.DBDriver = MySQLi
 # database.tests.DBPrefix =
+<<<<<<< HEAD
+=======
+# database.tests.port = 3306
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
 #--------------------------------------------------------------------
 # CONTENT SECURITY POLICY

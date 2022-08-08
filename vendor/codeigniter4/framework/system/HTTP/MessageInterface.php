@@ -37,7 +37,11 @@ interface MessageInterface
     public function appendBody($data);
 
     /**
+<<<<<<< HEAD
      * Populates the $headers array with any headers the getServer knows about.
+=======
+     * Populates the $headers array with any headers the server knows about.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function populateHeaders(): void;
 

@@ -34,8 +34,13 @@ class Paths
      *
      * If you want this front controller to use a different "app"
      * folder than the default one you can set its name here. The folder
+<<<<<<< HEAD
      * can also be renamed or relocated anywhere on your getServer. If
      * you do, use a full getServer path.
+=======
+     * can also be renamed or relocated anywhere on your server. If
+     * you do, use a full server path.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      *
      * @see http://codeigniter.com/user_guide/general/managing_apps.html
      *

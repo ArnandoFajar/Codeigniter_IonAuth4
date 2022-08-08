@@ -109,6 +109,13 @@ final class Utils
             if (\file_exists($installed) && \is_readable($installed)) {
                 $packages = \json_decode(\file_get_contents($installed), true);
 
+<<<<<<< HEAD
+=======
+                if (!\is_array($packages)) {
+                    continue;
+                }
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
                 foreach ($packages as $package) {
                     if (isset($package['extra'][$key]) && \is_array($package['extra'][$key])) {
                         $extras = \array_replace($extras, $package['extra'][$key]);

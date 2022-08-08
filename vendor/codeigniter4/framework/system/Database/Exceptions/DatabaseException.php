@@ -20,5 +20,9 @@ class DatabaseException extends Error implements ExceptionInterface
      *
      * @var int
      */
+<<<<<<< HEAD
     protected $code = 8;
+=======
+    protected $code = EXIT_DATABASE;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 }

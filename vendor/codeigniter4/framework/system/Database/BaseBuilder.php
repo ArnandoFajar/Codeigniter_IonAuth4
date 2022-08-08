@@ -369,10 +369,13 @@ class BaseBuilder
      */
     public function select($select = '*', ?bool $escape = null)
     {
+<<<<<<< HEAD
         if (is_string($select)) {
             $select = explode(',', $select);
         }
 
+=======
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         // If the escape value was not set, we will base it on the global setting
         if (! is_bool($escape)) {
             $escape = $this->db->protectIdentifiers;
@@ -384,6 +387,13 @@ class BaseBuilder
             return $this;
         }
 
+<<<<<<< HEAD
+=======
+        if (is_string($select)) {
+            $select = $escape === false ? [$select] : explode(',', $select);
+        }
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         foreach ($select as $val) {
             $val = trim($val);
 
@@ -1863,7 +1873,16 @@ class BaseBuilder
         }
 
         $sql = $this->_insert(
+<<<<<<< HEAD
             $this->db->protectIdentifiers($this->QBFrom[0], true, null, false),
+=======
+            $this->db->protectIdentifiers(
+                $this->removeAlias($this->QBFrom[0]),
+                true,
+                null,
+                false
+            ),
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             array_keys($this->QBSet),
             array_values($this->QBSet)
         );
@@ -1878,11 +1897,21 @@ class BaseBuilder
     /**
      * Compiles an insert string and runs the query
      *
+<<<<<<< HEAD
      * @throws DatabaseException
      *
      * @return bool|Query
      */
     public function insert(?array $set = null, ?bool $escape = null)
+=======
+     * @param array|object|null $set
+     *
+     * @throws DatabaseException
+     *
+     * @return bool
+     */
+    public function insert($set = null, ?bool $escape = null)
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     {
         if ($set !== null) {
             $this->set($set, '', $escape);
@@ -1893,7 +1922,16 @@ class BaseBuilder
         }
 
         $sql = $this->_insert(
+<<<<<<< HEAD
             $this->db->protectIdentifiers($this->QBFrom[0], true, $escape, false),
+=======
+            $this->db->protectIdentifiers(
+                $this->removeAlias($this->QBFrom[0]),
+                true,
+                $escape,
+                false
+            ),
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             array_keys($this->QBSet),
             array_values($this->QBSet)
         );
@@ -1913,6 +1951,28 @@ class BaseBuilder
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * @internal This is a temporary solution.
+     *
+     * @see https://github.com/codeigniter4/CodeIgniter4/pull/5376
+     * @TODO Fix a root cause, and this method should be removed.
+     */
+    protected function removeAlias(string $from): string
+    {
+        if (strpos($from, ' ') !== false) {
+            // if the alias is written with the AS keyword, remove it
+            $from = preg_replace('/\s+AS\s+/i', ' ', $from);
+
+            $parts = explode(' ', $from);
+            $from  = $parts[0];
+        }
+
+        return $from;
+    }
+
+    /**
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      * This method is used by both insert() and getCompiledInsert() to
      * validate that the there data is actually being set and that table
      * has been chosen to be inserted into.
@@ -1941,7 +2001,11 @@ class BaseBuilder
     }
 
     /**
+<<<<<<< HEAD
      * Compiles an replace into string and runs the query
+=======
+     * Compiles a replace into string and runs the query
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      *
      * @throws DatabaseException
      *
@@ -2012,11 +2076,20 @@ class BaseBuilder
     /**
      * Compiles an update string and runs the query.
      *
+<<<<<<< HEAD
      * @param mixed $where
      *
      * @throws DatabaseException
      */
     public function update(?array $set = null, $where = null, ?int $limit = null): bool
+=======
+     * @param array|object|null        $set
+     * @param array|RawSql|string|null $where
+     *
+     * @throws DatabaseException
+     */
+    public function update($set = null, $where = null, ?int $limit = null): bool
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     {
         if ($set !== null) {
             $this->set($set);
@@ -2337,7 +2410,11 @@ class BaseBuilder
             return false; // @codeCoverageIgnore
         }
 
+<<<<<<< HEAD
         $sql = $this->_delete($table);
+=======
+        $sql = $this->_delete($this->removeAlias($table));
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
         if (! empty($limit)) {
             $this->QBLimit = $limit;
@@ -2369,7 +2446,17 @@ class BaseBuilder
 
         $sql = $this->_update($this->QBFrom[0], [$column => "{$column} + {$value}"]);
 
+<<<<<<< HEAD
         return $this->db->query($sql, $this->binds, false);
+=======
+        if (! $this->testMode) {
+            $this->resetWrite();
+
+            return $this->db->query($sql, $this->binds, false);
+        }
+
+        return true;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     }
 
     /**
@@ -2383,7 +2470,17 @@ class BaseBuilder
 
         $sql = $this->_update($this->QBFrom[0], [$column => "{$column}-{$value}"]);
 
+<<<<<<< HEAD
         return $this->db->query($sql, $this->binds, false);
+=======
+        if (! $this->testMode) {
+            $this->resetWrite();
+
+            return $this->db->query($sql, $this->binds, false);
+        }
+
+        return true;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     }
 
     /**

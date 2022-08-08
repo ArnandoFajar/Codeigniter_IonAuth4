@@ -251,11 +251,19 @@ class Model extends BaseModel
 
     /**
      * Inserts data into the current table.
+<<<<<<< HEAD
      * This methods works only with dbCalls
      *
      * @param array $data Data
      *
      * @return bool|Query
+=======
+     * This method works only with dbCalls
+     *
+     * @param array $data Data
+     *
+     * @return bool
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     protected function doInsert(array $data)
     {

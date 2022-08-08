@@ -56,8 +56,12 @@ class Forge extends BaseForge
         parent::__construct($db);
 
         if (version_compare($this->db->getVersion(), '3.3', '<')) {
+<<<<<<< HEAD
             $this->createTableIfStr = false;
             $this->dropTableIfStr   = false;
+=======
+            $this->dropTableIfStr = false;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         }
     }
 

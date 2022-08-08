@@ -36,6 +36,11 @@ class Forge extends BaseForge
      * CREATE TABLE IF statement
      *
      * @var false
+<<<<<<< HEAD
+=======
+     *
+     * @deprecated This is no longer used.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     protected $createTableIfStr = false;
 

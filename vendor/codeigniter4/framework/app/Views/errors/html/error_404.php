@@ -73,7 +73,11 @@
         <h1>404 - File Not Found</h1>
 
         <p>
+<<<<<<< HEAD
             <?php if (! empty($message) && $message !== '(null)') : ?>
+=======
+            <?php if (ENVIRONMENT !== 'production') : ?>
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
                 <?= nl2br(esc($message)) ?>
             <?php else : ?>
                 Sorry! Cannot seem to find the page you were looking for.

@@ -12,6 +12,10 @@
 namespace CodeIgniter\RESTful;
 
 use CodeIgniter\API\ResponseTrait;
+<<<<<<< HEAD
+=======
+use CodeIgniter\HTTP\Response;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
 /**
  * An extendable controller to provide a RESTful API for a resource.
@@ -23,7 +27,11 @@ class ResourceController extends BaseResource
     /**
      * Return an array of resource objects, themselves in array format
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function index()
     {
@@ -33,9 +41,15 @@ class ResourceController extends BaseResource
     /**
      * Return the properties of a resource object
      *
+<<<<<<< HEAD
      * @param mixed $id
      *
      * @return mixed
+=======
+     * @param int|string|null $id
+     *
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function show($id = null)
     {
@@ -45,7 +59,11 @@ class ResourceController extends BaseResource
     /**
      * Return a new resource object, with default properties
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function new()
     {
@@ -55,7 +73,11 @@ class ResourceController extends BaseResource
     /**
      * Create a new resource object, from "posted" parameters
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function create()
     {
@@ -65,9 +87,15 @@ class ResourceController extends BaseResource
     /**
      * Return the editable properties of a resource object
      *
+<<<<<<< HEAD
      * @param mixed $id
      *
      * @return mixed
+=======
+     * @param int|string|null $id
+     *
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function edit($id = null)
     {
@@ -77,9 +105,15 @@ class ResourceController extends BaseResource
     /**
      * Add or update a model resource, from "posted" properties
      *
+<<<<<<< HEAD
      * @param mixed $id
      *
      * @return mixed
+=======
+     * @param string|null|int$id
+     *
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function update($id = null)
     {
@@ -89,9 +123,15 @@ class ResourceController extends BaseResource
     /**
      * Delete the designated resource object from the model
      *
+<<<<<<< HEAD
      * @param mixed $id
      *
      * @return mixed
+=======
+     * @param int|string|null $id
+     *
+     * @return Response|string|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function delete($id = null)
     {
@@ -100,6 +140,11 @@ class ResourceController extends BaseResource
 
     /**
      * Set/change the expected response representation for returned objects
+<<<<<<< HEAD
+=======
+     *
+     * @return void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function setFormat(string $format = 'json')
     {

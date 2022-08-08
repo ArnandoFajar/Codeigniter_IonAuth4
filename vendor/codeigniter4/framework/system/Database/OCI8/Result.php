@@ -13,7 +13,11 @@ namespace CodeIgniter\Database\OCI8;
 
 use CodeIgniter\Database\BaseResult;
 use CodeIgniter\Database\ResultInterface;
+<<<<<<< HEAD
 use CodeIgniter\Entity;
+=======
+use CodeIgniter\Entity\Entity;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
 /**
  * Result for OCI8

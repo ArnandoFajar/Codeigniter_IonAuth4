@@ -623,9 +623,15 @@ class RouteCollection implements RouteCollectionInterface
         $oldOptions = $this->currentOptions;
 
         // To register a route, we'll set a flag so that our router
+<<<<<<< HEAD
         // so it will see the group name.
         // If the group name is empty, we go on using the previously built group name.
         $this->group = $name ? ltrim($oldGroup . '/' . $name, '/') : $oldGroup;
+=======
+        // will see the group name.
+        // If the group name is empty, we go on using the previously built group name.
+        $this->group = $name ? trim($oldGroup . '/' . $name, '/') : $oldGroup;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
         $callback = array_pop($params);
 
@@ -989,7 +995,12 @@ class RouteCollection implements RouteCollectionInterface
      *      // Equals 'path/$param1/$param2'
      *      reverseRoute('Controller::method', $param1, $param2);
      *
+<<<<<<< HEAD
      * @param mixed ...$params
+=======
+     * @param string     $search    Named route or Controller::method
+     * @param int|string ...$params One or more parameters to be passed to the route
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      *
      * @return false|string
      */

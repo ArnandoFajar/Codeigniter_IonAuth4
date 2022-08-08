@@ -42,6 +42,14 @@ class Connection extends BaseConnection
      */
     public $escapeChar = '"';
 
+<<<<<<< HEAD
+=======
+    protected $connect_timeout;
+    protected $options;
+    protected $sslmode;
+    protected $service;
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     /**
      * Connect to the database.
      *
@@ -134,7 +142,11 @@ class Connection extends BaseConnection
         try {
             return pg_query($this->connID, $sql);
         } catch (ErrorException $e) {
+<<<<<<< HEAD
             log_message('error', $e);
+=======
+            log_message('error', (string) $e);
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             if ($this->DBDebug) {
                 throw $e;
             }

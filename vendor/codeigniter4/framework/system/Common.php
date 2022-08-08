@@ -44,6 +44,10 @@ if (! function_exists('app_timezone')) {
      */
     function app_timezone(): string
     {
+<<<<<<< HEAD
+=======
+        /** @var App $config */
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         $config = config(App::class);
 
         return $config->appTimezone;
@@ -904,7 +908,12 @@ if (! function_exists('route_to')) {
      * NOTE: This requires the controller/method to
      * have a route defined in the routes Config file.
      *
+<<<<<<< HEAD
      * @param mixed ...$params
+=======
+     * @param string     $method    Named route or Controller::method
+     * @param int|string ...$params One or more parameters to be passed to the route
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      *
      * @return false|string
      */

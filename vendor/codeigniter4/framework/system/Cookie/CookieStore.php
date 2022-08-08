@@ -49,7 +49,11 @@ class CookieStore implements Countable, IteratorAggregate
             try {
                 return Cookie::fromHeaderString($header, $raw);
             } catch (CookieException $e) {
+<<<<<<< HEAD
                 log_message('error', $e->getMessage());
+=======
+                log_message('error', (string) $e);
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
                 return false;
             }

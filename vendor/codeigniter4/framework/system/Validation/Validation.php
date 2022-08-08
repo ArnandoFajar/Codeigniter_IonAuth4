@@ -147,7 +147,13 @@ class Validation implements ValidationInterface
 
             if (strpos($field, '*') !== false) {
                 $values = array_filter(array_flatten_with_dots($data), static fn ($key) => preg_match(
+<<<<<<< HEAD
                     '/^' . str_replace('\.\*', '\..+', preg_quote($field, '/')) . '$/',
+=======
+                    '/^'
+                    . str_replace(['\.\*', '\*\.'], ['\..+', '.+\.'], preg_quote($field, '/'))
+                    . '$/',
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
                     $key
                 ), ARRAY_FILTER_USE_KEY);
                 // if keys not found
@@ -399,7 +405,11 @@ class Validation implements ValidationInterface
             $ruleSet[$field]['errors'] = $errors;
         }
 
+<<<<<<< HEAD
         $this->setRules($ruleSet + $this->getRules());
+=======
+        $this->setRules($ruleSet + $this->getRules(), $this->customErrors);
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
         return $this;
     }
@@ -657,7 +667,11 @@ class Validation implements ValidationInterface
         }
 
         $errors = array_filter($this->getErrors(), static fn ($key) => preg_match(
+<<<<<<< HEAD
             '/^' . str_replace('\.\*', '\..+', preg_quote($field, '/')) . '$/',
+=======
+            '/^' . str_replace(['\.\*', '\*\.'], ['\..+', '.+\.'], preg_quote($field, '/')) . '$/',
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             $key
         ), ARRAY_FILTER_USE_KEY);
 

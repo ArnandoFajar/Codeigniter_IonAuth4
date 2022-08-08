@@ -353,11 +353,19 @@ abstract class BaseModel
 
     /**
      * Inserts data into the current database
+<<<<<<< HEAD
      * This methods works only with dbCalls
      *
      * @param array $data Data
      *
      * @return bool|int|string
+=======
+     * This method works only with dbCalls
+     *
+     * @param array $data Data
+     *
+     * @return bool
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     abstract protected function doInsert(array $data);
 
@@ -695,7 +703,11 @@ abstract class BaseModel
      *
      * @throws ReflectionException
      *
+<<<<<<< HEAD
      * @return bool|int|string
+=======
+     * @return bool|int|string insert ID or true on success. false on failure.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function insert($data = null, bool $returnID = true)
     {
@@ -1073,7 +1085,12 @@ abstract class BaseModel
      */
     public function paginate(?int $perPage = null, string $group = 'default', ?int $page = null, int $segment = 0)
     {
+<<<<<<< HEAD
         $pager = Services::pager(null, null, false);
+=======
+        // Since multiple models may use the Pager, the Pager must be shared.
+        $pager = Services::pager();
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
         if ($segment) {
             $pager->setSegment($segment, $group);

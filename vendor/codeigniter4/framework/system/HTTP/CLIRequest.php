@@ -212,6 +212,10 @@ class CLIRequest extends Request
      */
     public function isCLI(): bool
     {
+<<<<<<< HEAD
         return is_cli();
+=======
+        return true;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     }
 }

@@ -96,6 +96,10 @@ use Config\View as ConfigView;
  * @method static CLIRequest clirequest(App $config = null, $getShared = true)
  * @method static CodeIgniter codeigniter(App $config = null, $getShared = true)
  * @method static Commands commands($getShared = true)
+<<<<<<< HEAD
+=======
+ * @method static void createRequest(App $config, bool $isCli = false)
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
  * @method static ContentSecurityPolicy csp(CSPConfig $config = null, $getShared = true)
  * @method static CURLRequest curlrequest($options = [], ResponseInterface $response = null, App $config = null, $getShared = true)
  * @method static Email email($config = null, $getShared = true)
@@ -105,6 +109,10 @@ use Config\View as ConfigView;
  * @method static Format format(ConfigFormat $config = null, $getShared = true)
  * @method static Honeypot honeypot(ConfigHoneyPot $config = null, $getShared = true)
  * @method static BaseHandler image($handler = null, Images $config = null, $getShared = true)
+<<<<<<< HEAD
+=======
+ * @method static IncomingRequest incomingrequest(?App $config = null, bool $getShared = true)
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
  * @method static Iterator iterator($getShared = true)
  * @method static Language language($locale = null, $getShared = true)
  * @method static Logger logger($getShared = true)
@@ -114,7 +122,11 @@ use Config\View as ConfigView;
  * @method static Parser parser($viewPath = null, ConfigView $config = null, $getShared = true)
  * @method static RedirectResponse redirectresponse(App $config = null, $getShared = true)
  * @method static View renderer($viewPath = null, ConfigView $config = null, $getShared = true)
+<<<<<<< HEAD
  * @method static IncomingRequest request(App $config = null, $getShared = true)
+=======
+ * @method static IncomingRequest|CLIRequest request(App $config = null, $getShared = true)
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
  * @method static Response response(App $config = null, $getShared = true)
  * @method static Router router(RouteCollectionInterface $routes = null, Request $request = null, $getShared = true)
  * @method static RouteCollection routes($getShared = true)

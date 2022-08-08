@@ -45,9 +45,13 @@ class RedisHandler extends BaseHandler
     {
         $this->prefix = $config->prefix;
 
+<<<<<<< HEAD
         if (! empty($config)) {
             $this->config = array_merge($this->config, $config->redis);
         }
+=======
+        $this->config = array_merge($this->config, $config->redis);
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     }
 
     /**

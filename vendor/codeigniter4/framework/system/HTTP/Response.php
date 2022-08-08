@@ -19,7 +19,11 @@ use Config\App;
 use Config\Services;
 
 /**
+<<<<<<< HEAD
  * Representation of an outgoing, getServer-side response.
+=======
+ * Representation of an outgoing, server-side response.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
  *
  * Per the HTTP specification, this interface includes properties for
  * each of the following:
@@ -203,7 +207,11 @@ class Response extends Message implements MessageInterface, ResponseInterface
     /**
      * Gets the response status code.
      *
+<<<<<<< HEAD
      * The status code is a 3-digit integer result code of the getServer's attempt
+=======
+     * The status code is a 3-digit integer result code of the server's attempt
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      * to understand and satisfy the request.
      *
      * @return int Status code.

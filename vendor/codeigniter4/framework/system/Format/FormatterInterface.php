@@ -21,7 +21,11 @@ interface FormatterInterface
      *
      * @param array|string $data
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return bool|string
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function format($data);
 }

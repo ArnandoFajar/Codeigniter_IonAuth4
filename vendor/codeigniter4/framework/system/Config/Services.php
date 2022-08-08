@@ -75,6 +75,10 @@ use Config\Services as AppServices;
 use Config\Toolbar as ToolbarConfig;
 use Config\Validation as ValidationConfig;
 use Config\View as ViewConfig;
+<<<<<<< HEAD
+=======
+use Locale;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
 /**
  * Services Configuration file.
@@ -117,6 +121,11 @@ class Services extends BaseService
      * a command line request.
      *
      * @return CLIRequest
+<<<<<<< HEAD
+=======
+     *
+     * @internal
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public static function clirequest(?App $config = null, bool $getShared = true)
     {
@@ -361,8 +370,19 @@ class Services extends BaseService
             return static::getSharedInstance('language', $locale)->setLocale($locale);
         }
 
+<<<<<<< HEAD
         // Use '?:' for empty string check
         $locale = $locale ?: AppServices::request()->getLocale();
+=======
+        if (AppServices::request() instanceof IncomingRequest) {
+            $requestLocale = AppServices::request()->getLocale();
+        } else {
+            $requestLocale = Locale::getDefault();
+        }
+
+        // Use '?:' for empty string check
+        $locale = $locale ?: $requestLocale;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
         return new Language($locale);
     }
@@ -470,9 +490,19 @@ class Services extends BaseService
     }
 
     /**
+<<<<<<< HEAD
      * The Request class models an HTTP request.
      *
      * @return IncomingRequest
+=======
+     * Returns the current Request object.
+     *
+     * createRequest() injects IncomingRequest or CLIRequest.
+     *
+     * @return CLIRequest|IncomingRequest
+     *
+     * @deprecated The parameter $config and $getShared are deprecated.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public static function request(?App $config = null, bool $getShared = true)
     {
@@ -480,6 +510,48 @@ class Services extends BaseService
             return static::getSharedInstance('request', $config);
         }
 
+<<<<<<< HEAD
+=======
+        // @TODO remove the following code for backward compatibility
+        return static::incomingrequest($config, $getShared);
+    }
+
+    /**
+     * Create the current Request object, either IncomingRequest or CLIRequest.
+     *
+     * This method is called from CodeIgniter::getRequestObject().
+     *
+     * @internal
+     */
+    public static function createRequest(App $config, bool $isCli = false): void
+    {
+        if ($isCli) {
+            $request = AppServices::clirequest($config);
+        } else {
+            $request = AppServices::incomingrequest($config);
+
+            // guess at protocol if needed
+            $request->setProtocolVersion($_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.1');
+        }
+
+        // Inject the request object into Services::request().
+        static::$instances['request'] = $request;
+    }
+
+    /**
+     * The IncomingRequest class models an HTTP request.
+     *
+     * @return IncomingRequest
+     *
+     * @internal
+     */
+    public static function incomingrequest(?App $config = null, bool $getShared = true)
+    {
+        if ($getShared) {
+            return static::getSharedInstance('request', $config);
+        }
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         $config ??= config('App');
 
         return new IncomingRequest(

@@ -16,7 +16,11 @@ if (! function_exists('dot_array_search')) {
      * Searches an array through dot syntax. Supports
      * wildcard searches, like foo.*.bar
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return array|bool|int|object|string|null
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     function dot_array_search(string $index, array $array)
     {

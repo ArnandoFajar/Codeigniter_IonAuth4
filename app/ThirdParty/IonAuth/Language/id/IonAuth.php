@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 /**
  * Name:  Ion Auth Lang - Indonesian
@@ -23,6 +24,31 @@
  * Description:  Indonesian language file for Ion Auth messages and errors
  *
  */
+=======
+/**
+* Name:  Ion Auth Lang - Indonesian
+*
+* Author: Toni Haryanto
+* 		  toha.samba@gmail.com
+*         @yllumi
+*
+* Author: Daeng Muhammad Feisal
+*         daengdoang@gmail.com
+*         @daengdoang
+*
+* Author: Suhindra
+*         suhindra@hotmail.co.id
+*         @suhindra
+*
+* Location: https://github.com/benedmunds/CodeIgniter-Ion-Auth
+*
+* Created:  11.15.2011
+* Last-Edit: 28.04.2016
+*
+* Description:  Indonesian language file for Ion Auth messages and errors
+*
+*/
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
 return [
 	// Account Creation
@@ -53,7 +79,11 @@ return [
 
 	// Login / Logout
 	'login_successful'							=> 'Log In Berhasil',
+<<<<<<< HEAD
 	'login_unsuccessful'						=> 'Log In Gagal',
+=======
+	'login_unsuccessful'							=> 'Log In Gagal',
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 	'login_unsuccessful_not_active'	            => 'Akun Tidak Aktif',
 	'login_timeout'								=> 'Sementara Terkunci. Coba Beberapa Saat Lagi.',
 	'logout_successful'							=> 'Log Out Berhasil',

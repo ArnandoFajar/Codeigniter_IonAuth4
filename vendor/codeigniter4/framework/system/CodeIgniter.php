@@ -21,7 +21,10 @@ use CodeIgniter\HTTP\DownloadResponse;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RedirectResponse;
 use CodeIgniter\HTTP\Request;
+<<<<<<< HEAD
 use CodeIgniter\HTTP\RequestInterface;
+=======
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\HTTP\URI;
 use CodeIgniter\Router\Exceptions\RedirectException;
@@ -35,6 +38,10 @@ use Exception;
 use Kint;
 use Kint\Renderer\CliRenderer;
 use Kint\Renderer\RichRenderer;
+<<<<<<< HEAD
+=======
+use Locale;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 use LogicException;
 
 /**
@@ -47,14 +54,22 @@ class CodeIgniter
     /**
      * The current version of CodeIgniter Framework
      */
+<<<<<<< HEAD
     public const CI_VERSION = '4.2.1';
 
     private const MIN_PHP_VERSION = '7.4';
+=======
+    public const CI_VERSION = '4.2.3';
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
     /**
      * App startup time.
      *
+<<<<<<< HEAD
      * @var mixed
+=======
+     * @var float|null
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     protected $startTime;
 
@@ -158,6 +173,7 @@ class CodeIgniter
      */
     public function __construct(App $config)
     {
+<<<<<<< HEAD
         if (version_compare(PHP_VERSION, self::MIN_PHP_VERSION, '<')) {
             // @codeCoverageIgnoreStart
             $message = extension_loaded('intl')
@@ -168,6 +184,8 @@ class CodeIgniter
             // @codeCoverageIgnoreEnd
         }
 
+=======
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         $this->startTime = microtime(true);
         $this->config    = $config;
     }
@@ -190,7 +208,11 @@ class CodeIgniter
         }
 
         // Set default locale on the server
+<<<<<<< HEAD
         locale_set_default($this->config->defaultLocale ?? 'en');
+=======
+        Locale::setDefault($this->config->defaultLocale ?? 'en');
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
         // Set default timezone on the server
         date_default_timezone_set($this->config->appTimezone ?? 'UTC');
@@ -297,10 +319,16 @@ class CodeIgniter
      * tries to route the response, loads the controller and generally
      * makes all of the pieces work together.
      *
+<<<<<<< HEAD
      * @throws Exception
      * @throws RedirectException
      *
      * @return bool|mixed|RequestInterface|ResponseInterface|void
+=======
+     * @throws RedirectException
+     *
+     * @return ResponseInterface|void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function run(?RouteCollectionInterface $routes = null, bool $returnResponse = false)
     {
@@ -308,6 +336,11 @@ class CodeIgniter
             throw new LogicException('Context must be set before run() is called. If you are upgrading from 4.1.x, you need to merge `public/index.php` and `spark` file from `vendor/codeigniter4/framework`.');
         }
 
+<<<<<<< HEAD
+=======
+        static::$cacheTTL = 0;
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         $this->startBenchmark();
 
         $this->getRequestObject();
@@ -320,7 +353,13 @@ class CodeIgniter
         if ($this->request instanceof IncomingRequest && strtolower($this->request->getMethod()) === 'cli') {
             $this->response->setStatusCode(405)->setBody('Method Not Allowed');
 
+<<<<<<< HEAD
             return $this->sendResponse();
+=======
+            $this->sendResponse();
+
+            return;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         }
 
         Events::trigger('pre_system');
@@ -408,7 +447,11 @@ class CodeIgniter
      * @throws PageNotFoundException
      * @throws RedirectException
      *
+<<<<<<< HEAD
      * @return mixed|RequestInterface|ResponseInterface
+=======
+     * @return ResponseInterface
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     protected function handleRequest(?RouteCollectionInterface $routes, Cache $cacheConfig, bool $returnResponse = false)
     {
@@ -474,6 +517,12 @@ class CodeIgniter
         // so it can be used with the output.
         $this->gatherOutput($cacheConfig, $returned);
 
+<<<<<<< HEAD
+=======
+        // After filter debug toolbar requires 'total_execution'.
+        $this->totalTime = $this->benchmark->getElapsedTime('total_execution');
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         // Never run filters when running through Spark cli
         if (! $this->isSparked()) {
             $filters->setResponse($this->response);
@@ -495,6 +544,20 @@ class CodeIgniter
             $this->response = $response;
         }
 
+<<<<<<< HEAD
+=======
+        // Cache it without the performance metrics replaced
+        // so that we can have live speed updates along the way.
+        // Must be run after filters to preserve the Response headers.
+        if (static::$cacheTTL > 0) {
+            $this->cachePage($cacheConfig);
+        }
+
+        // Update the performance metrics
+        $output = $this->displayPerformanceMetrics($this->response->getBody());
+        $this->response->setBody($output);
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         // Save our current URI as the previous URI in the session
         // for safer, more accurate use with `previous_url()` helper function.
         $this->storePreviousURL(current_url(true));
@@ -528,7 +591,11 @@ class CodeIgniter
     {
         // Make sure ENVIRONMENT isn't already set by other means.
         if (! defined('ENVIRONMENT')) {
+<<<<<<< HEAD
             define('ENVIRONMENT', $_SERVER['CI_ENVIRONMENT'] ?? 'production');
+=======
+            define('ENVIRONMENT', env('CI_ENVIRONMENT', 'production'));
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         }
     }
 
@@ -583,9 +650,13 @@ class CodeIgniter
     }
 
     /**
+<<<<<<< HEAD
      * Get our Request object, (either IncomingRequest or CLIRequest)
      * and set the server protocol based on the information provided
      * by the server.
+=======
+     * Get our Request object, (either IncomingRequest or CLIRequest).
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     protected function getRequestObject()
     {
@@ -594,12 +665,21 @@ class CodeIgniter
         }
 
         if ($this->isSparked() || $this->isPhpCli()) {
+<<<<<<< HEAD
             $this->request = Services::clirequest($this->config);
         } else {
             $this->request = Services::request($this->config);
             // guess at protocol if needed
             $this->request->setProtocolVersion($_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.1');
         }
+=======
+            Services::createRequest($this->config, true);
+        } else {
+            Services::createRequest($this->config);
+        }
+
+        $this->request = Services::request();
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     }
 
     /**
@@ -642,7 +722,11 @@ class CodeIgniter
      *
      * @throws Exception
      *
+<<<<<<< HEAD
      * @return bool|ResponseInterface
+=======
+     * @return false|ResponseInterface
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public function displayCache(Cache $config)
     {
@@ -665,7 +749,12 @@ class CodeIgniter
                 $this->response->setHeader($name, $value);
             }
 
+<<<<<<< HEAD
             $output = $this->displayPerformanceMetrics($output);
+=======
+            $this->totalTime = $this->benchmark->getElapsedTime('total_execution');
+            $output          = $this->displayPerformanceMetrics($output);
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             $this->response->setBody($output);
 
             return $this->response;
@@ -735,8 +824,11 @@ class CodeIgniter
      */
     public function displayPerformanceMetrics(string $output): string
     {
+<<<<<<< HEAD
         $this->totalTime = $this->benchmark->getElapsedTime('total_execution');
 
+=======
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         return str_replace('{elapsed_time}', (string) $this->totalTime, $output);
     }
 
@@ -948,8 +1040,14 @@ class CodeIgniter
             ob_end_flush(); // @codeCoverageIgnore
         }
 
+<<<<<<< HEAD
         throw PageNotFoundException::forPageNotFound(
             (ENVIRONMENT !== 'production' || ! $this->isWeb()) ? $e->getMessage() : ''
+=======
+        // Throws new PageNotFoundException and remove exception message on production.
+        throw PageNotFoundException::forPageNotFound(
+            (ENVIRONMENT !== 'production' || ! $this->isWeb()) ? $e->getMessage() : null
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         );
     }
 
@@ -957,7 +1055,14 @@ class CodeIgniter
      * Gathers the script output from the buffer, replaces some execution
      * time tag in the output and displays the debug toolbar, if required.
      *
+<<<<<<< HEAD
      * @param ResponseInterface|string|null $returned
+=======
+     * @param Cache|null                    $cacheConfig Deprecated. No longer used.
+     * @param ResponseInterface|string|null $returned
+     *
+     * @deprecated $cacheConfig is deprecated.
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     protected function gatherOutput(?Cache $cacheConfig = null, $returned = null)
     {
@@ -993,6 +1098,7 @@ class CodeIgniter
             $this->output .= $returned;
         }
 
+<<<<<<< HEAD
         // Cache it without the performance metrics replaced
         // so that we can have live speed updates along the way.
         if (static::$cacheTTL > 0) {
@@ -1001,6 +1107,8 @@ class CodeIgniter
 
         $this->output = $this->displayPerformanceMetrics($this->output);
 
+=======
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         $this->response->setBody($this->output);
     }
 
@@ -1070,6 +1178,11 @@ class CodeIgniter
     /**
      * Sends the output of this request back to the client.
      * This is what they've been waiting for!
+<<<<<<< HEAD
+=======
+     *
+     * @return void
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     protected function sendResponse()
     {

@@ -169,7 +169,12 @@ interface RouteCollectionInterface
      *      // Equals 'path/$param1/$param2'
      *      reverseRoute('Controller::method', $param1, $param2);
      *
+<<<<<<< HEAD
      * @param array ...$params
+=======
+     * @param string     $search    Named route or Controller::method
+     * @param int|string ...$params
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      *
      * @return false|string
      */

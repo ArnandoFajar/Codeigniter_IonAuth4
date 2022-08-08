@@ -87,7 +87,11 @@ class Factories
      * Loads instances based on the method component name. Either
      * creates a new instance or returns an existing shared instance.
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return object|null
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public static function __callStatic(string $component, array $arguments)
     {

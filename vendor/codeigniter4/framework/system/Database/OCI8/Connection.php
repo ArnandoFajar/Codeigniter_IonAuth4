@@ -204,7 +204,11 @@ class Connection extends BaseConnection implements ConnectionInterface
 
             return $result;
         } catch (ErrorException $e) {
+<<<<<<< HEAD
             log_message('error', $e->getMessage());
+=======
+            log_message('error', (string) $e);
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 
             if ($this->DBDebug) {
                 throw $e;

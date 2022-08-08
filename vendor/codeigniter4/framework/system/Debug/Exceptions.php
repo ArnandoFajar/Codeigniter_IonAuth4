@@ -13,6 +13,11 @@ namespace CodeIgniter\Debug;
 
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\Exceptions\PageNotFoundException;
+<<<<<<< HEAD
+=======
+use CodeIgniter\HTTP\CLIRequest;
+use CodeIgniter\HTTP\Exceptions\HTTPException;
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\Response;
 use Config\Exceptions as ExceptionsConfig;
@@ -50,9 +55,15 @@ class Exceptions
     protected $config;
 
     /**
+<<<<<<< HEAD
      * The incoming request.
      *
      * @var IncomingRequest
+=======
+     * The request.
+     *
+     * @var CLIRequest|IncomingRequest
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     protected $request;
 
@@ -63,7 +74,14 @@ class Exceptions
      */
     protected $response;
 
+<<<<<<< HEAD
     public function __construct(ExceptionsConfig $config, IncomingRequest $request, Response $response)
+=======
+    /**
+     * @param CLIRequest|IncomingRequest $request
+     */
+    public function __construct(ExceptionsConfig $config, $request, Response $response)
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
     {
         $this->ob_level = ob_get_level();
         $this->viewPath = rtrim($config->errorViewPath, '\\/ ') . DIRECTORY_SEPARATOR;
@@ -111,7 +129,18 @@ class Exceptions
         }
 
         if (! is_cli()) {
+<<<<<<< HEAD
             $this->response->setStatusCode($statusCode);
+=======
+            try {
+                $this->response->setStatusCode($statusCode);
+            } catch (HTTPException $e) {
+                // Workaround for invalid HTTP status code.
+                $statusCode = 500;
+                $this->response->setStatusCode($statusCode);
+            }
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             if (! headers_sent()) {
                 header(sprintf('HTTP/%s %s %s', $this->request->getProtocolVersion(), $this->response->getStatusCode(), $this->response->getReasonPhrase()), true, $statusCode);
             }
@@ -257,7 +286,11 @@ class Exceptions
             'title'   => get_class($exception),
             'type'    => get_class($exception),
             'code'    => $statusCode,
+<<<<<<< HEAD
             'message' => $exception->getMessage() ?? '(null)',
+=======
+            'message' => $exception->getMessage(),
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             'file'    => $exception->getFile(),
             'line'    => $exception->getLine(),
             'trace'   => $trace,

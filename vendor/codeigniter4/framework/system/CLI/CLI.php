@@ -673,7 +673,11 @@ class CLI
             // Then let the developer know of the error.
             static::$height = null;
             static::$width  = null;
+<<<<<<< HEAD
             log_message('error', $e->getMessage());
+=======
+            log_message('error', (string) $e);
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         }
     }
 
@@ -838,7 +842,11 @@ class CLI
      * Gets a single command-line option. Returns TRUE if the option
      * exists, but doesn't have a value, and is simply acting as a flag.
      *
+<<<<<<< HEAD
      * @return mixed
+=======
+     * @return string|true|null
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      */
     public static function getOption(string $name)
     {

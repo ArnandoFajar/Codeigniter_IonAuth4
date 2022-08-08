@@ -509,8 +509,13 @@ class Filters
     /**
      * Check paths for match for URI
      *
+<<<<<<< HEAD
      * @param string $uri   URI to test against
      * @param mixed  $paths The path patterns to test
+=======
+     * @param string       $uri   URI to test against
+     * @param array|string $paths The path patterns to test
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
      *
      * @return bool True if any of the paths apply to the URI
      */

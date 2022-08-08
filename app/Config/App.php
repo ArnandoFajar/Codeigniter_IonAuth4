@@ -25,7 +25,7 @@ class App extends BaseConfig
      * @var string
      */
     public $baseURL = 'http://localhost:8080/';
-
+    // $_SERVER['CI_ENVIRONMENT'] = 'development';
     /**
      * --------------------------------------------------------------------------
      * Index File

@@ -129,7 +129,11 @@ class Connection extends BaseConnection
                 ? $this->connID->exec($sql)
                 : $this->connID->query($sql);
         } catch (ErrorException $e) {
+<<<<<<< HEAD
             log_message('error', $e);
+=======
+            log_message('error', (string) $e);
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
             if ($this->DBDebug) {
                 throw $e;
             }
@@ -151,6 +155,13 @@ class Connection extends BaseConnection
      */
     protected function _escapeString(string $str): string
     {
+<<<<<<< HEAD
+=======
+        if (! $this->connID) {
+            $this->initialize();
+        }
+
+>>>>>>> 45ec85920dadf24e2929c214f61a722d979624bc
         return $this->connID->escapeString($str);
     }
 
