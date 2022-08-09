@@ -186,9 +186,9 @@ class IonAuth extends \CodeIgniter\Config\BaseConfig
 	 | 	  array  = Manually set yoggur email confrgrgrig settings
 	 */
 
-	 // EmailConfig berfungsi jika ada user yang lupa password maka dpat melakukan forgot password
-	 // Setting $emailConfig
-	 // Selain itu juga Setting bagian App/Config/Email.php 
+	// EmailConfig berfungsi jika ada user yang lupa password maka dpat melakukan forgot password
+	// Setting $emailConfig
+	// Selain itu juga Setting bagian App/Config/Email.php 
 	public $useCiEmail  = true; // Send Email using the builtin CI email class, if false it will return the code and the identity
 	public $emailConfig = [
 		'mailType' => 'html',

@@ -885,7 +885,10 @@ class Auth extends BaseController
 		} else {
 			$email    = strtolower($this->request->getPost('email'));
 			$id = $this->ionAuth->getUserIdFromIdentity($email);
-			$this->delete_user($id);
+
+			if ($id) {
+				$this->ionAuth->deleteUser($id);
+			}
 			// dd($del);
 			// display the create user form
 			// set the flash data error message if there is one
