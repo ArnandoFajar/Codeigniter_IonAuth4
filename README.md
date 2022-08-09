@@ -15,19 +15,20 @@
 you can search file App/ThirdParty/IonAuth/Config/IonAuth.php
 
 public $useCiEmail  = true; // Send Email using the builtin CI email class, if false it will return the code and the identity
-public $emailConfig = [
-  'mailType' => 'html',
-  'protocol' => 'smtp',
-  'smtp_host' => 'mail.website.com',
-  'smtp_port' => xxx,
-  'smtp_user' => 'admin@website.id',
-  'smtp_pass' => 'your Password Email',
-];
+
+public $emailConfig = [ <br>
+  'mailType' => 'html', <br>
+  'protocol' => 'smtp', <br>
+  'smtp_host' => 'mail.website.com', <br>
+  'smtp_port' => xxx, <br>
+  'smtp_user' => 'admin@website.id', <br>
+  'smtp_pass' => 'your Password Email', <br>
+];<br>
 
 Modification in $emailConfig to smtp your website.
 
 ## How to nonaktifkan verification Email 
 
-public $emailActivation          = true;               // Email Activation for registration
+public $emailActivation          = true;               // Email Activation for registration<br>
 you can search file App/ThirdParty/IonAuth/Config/IonAuth.php in line 155, change value true to false.
 
